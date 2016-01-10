@@ -13,6 +13,7 @@ from random import choice
 from random import randrange
 from sys import argv
 
+
 def pickwords(filename):
     """This function chooses a random word from a chosen wordlist.
     :param filename: the wordlist that the function should search.
@@ -22,10 +23,11 @@ def pickwords(filename):
     word = choice(open(filename, 'r').readlines()).rstrip('\r\n')
     return word
 
+
 def pickpattern():
     """This function chooses the parts-of-speech pattern for the passphrase and returns the list"""
 
-    pattern = randrange(1,7,1)
+    pattern = randrange(1, 7, 1)
 
     if pattern == 1:
         files = ['Noun-common.list', 'Verbs-common.list', 'Adj-common.list', 'Nouns-common.list']
@@ -40,6 +42,7 @@ def pickpattern():
     elif pattern == 6:
         files = ['Noun-common.list', 'Verbs-common.list', 'Adverb-common.list', 'Adj-common.list']
     return files
+
 
 def main():
     """This is the main function of the script, which controls the number of passphrases created."""
@@ -58,6 +61,7 @@ def main():
             passphrase += word
 
         print(passphrase)
+
 
 if __name__ == '__main__':
     main()
